@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Hệ thống Y tế Quảng Nam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #004d40;
+            --accent-color: #1a237e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #004d40 0%, #002d26 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-card i.logo-icon {
+            font-size: 50px;
+            color: var(--primary-bg);
+            margin-bottom: 15px;
+        }
+
+        .login-card h2 {
+            color: var(--primary-bg);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+            text-align: left;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            color: #888;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 12px 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-bg);
+            box-shadow: 0 0 5px rgba(0,77,64,0.2);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: #0d145a;
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <i class="fa-solid fa-hospital-user logo-icon"></i>
+    <h2>Hệ thống quản lý thống kê <br> Bệnh viện YHCT Quảng Nam</h2>
+    
+    <form id="loginForm">
+        <div class="input-group">
+            <label>Tên đăng nhập</label>
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="username" placeholder="Nhập tài khoản" required>
+        </div>
+        
+        <div class="input-group">
+            <label>Mật khẩu</label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="********" required>
+        </div>
+        
+        <button type="submit" class="btn-login">ĐĂNG NHẬP</button>
+    </form>
+
+    <div class="footer-text">
+        &copy; 2023 Bệnh viện YHCT Quảng Nam - Bản quyền thuộc về CNTT
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Giả lập kiểm tra đăng nhập
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+
+        if(user === "admin" && pass === "123456") {
+            alert("Đăng nhập thành công!");
+            window.location.href = "index.html"; // Chuyển sang trang Dashboard đã tạo
+        } else {
+            alert("Sai tài khoản hoặc mật khẩu! (Thử: admin / 123456)");
+        }
+    });
+</script>
+
+</body>
+</html>

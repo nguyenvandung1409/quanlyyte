@@ -44,23 +44,23 @@
             position: relative;
         }
 
-	.logo-container {
-            position: absolute;
-            left: 15px;
-            background: white;
-            border-radius: 50%;
-            padding: 0px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-container i {
-            font-size: 35px;
-            color: var(--primary-bg);
-        }
+		.logo-container {
+		    position: absolute;	
+		    left: 5px;            
+		    /* Căn logo sát lề trái theo chiều ngang */
+		    justify-content: flex-start; 
+		    /* Căn logo lên phía trên theo chiều dọc */
+		    align-items: flex-start;     
+		    
+		    width: 50px; /* Kích thước khung chứa logo */
+		    margin: 10px; /* Thêm khoảng cách với mép màn hình nếu cần */
+		}
+	
+		.main-logo {
+		    width: 100%;  /* Ảnh tự co theo chiều rộng 50px của container */
+		    height: auto; /* Giữ nguyên tỷ lệ ảnh */
+		    display: block;
+		}
 
         header h1 {
             color: var(--text-color);
@@ -152,7 +152,9 @@
 
 <header>
     <div class="logo-container">
-        <i class="fa-solid fa-hospital-user"></i>
+        <a href="/">
+        <img src="./favicon.png" alt="Logo" class="main-logo">
+    	</a>
     </div>
     <h1>Phần mềm quản lý thông tin y tế - Bệnh viện Y học cổ truyền Quảng Nam</h1>
 </header>
